@@ -35,8 +35,9 @@ class ParentComponent extends Component {
   // {Smart Component: I have a function, but something isn't working? I also need to pass that function to the ChildComponent.}
   render() {
     return (
+
       <div>
-        <div>
+        <div className="form-group">
           <input onChange={this.handleInput} value={this.state.whatToSay} type="text" placeholder="Say It, Don't Spray It!" />
         </div>
         <div>

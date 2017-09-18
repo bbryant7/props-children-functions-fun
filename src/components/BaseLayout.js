@@ -8,6 +8,7 @@ class BaseLayout extends Component {
     return (
       <div>
       <Header/>
+      {this.props.children}
       <Footer/>
       </div>
     );

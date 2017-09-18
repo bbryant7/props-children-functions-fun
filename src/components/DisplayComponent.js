@@ -4,7 +4,11 @@ import '../styles/App.css';
 class DisplayComponent extends Component {
   render() {
     return (
-      <div>{this.props.whatWasSaid}</div>
+      <div>
+      <h4 className="card-title">State, props, children, function, fun!</h4>
+       <h6 className="card-subtitle mb-2 text-muted">Messages</h6>
+      {this.props.whatWasSaid}
+      </div>
     );
   }
 }

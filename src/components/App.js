@@ -8,9 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <BaseLayout>
-
-        </BaseLayout>
         <ParentComponent />
+        </BaseLayout>
+
       </div>
     );
   }

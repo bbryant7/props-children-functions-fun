@@ -6,7 +6,8 @@ export default class ChildComponent extends Component {
     return (
       <div>
         <div>
-          <input type="submit" onClick={this.props.onClick}/>
+
+          <button type="button" className="btn btn-info btn-sm" onClick={this.props.onClick}>Say It!</button>
         </div>
       </div>
     );

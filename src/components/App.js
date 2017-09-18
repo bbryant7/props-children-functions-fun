@@ -33,18 +33,19 @@ class ParentComponent extends Component {
   constructor(props){
     super(props);
 
-    this.handleInput = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     //state lives here
     this.state = {
       whatToSay: "",
-      whatWasSaid: [],
+      whatWasSaid: "",
     }
   }
   handleInput(e) {
     e.preventDefault();
     //set the state on input change
-    this.setState({whatToSay: this.state.whatToSay});
+    let whatToSay = e.target.value
+    this.setState({whatToSay: whatToSay});
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -64,8 +65,8 @@ class ParentComponent extends Component {
           <input onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!" />
         </div>
         <div>
-          <ChildComponent onClick={this.state.onClick}/>
-          <DisplayComponent sayWhat={this.state.sayWhat} />
+          <ChildComponent onClick={this.handleSubmit}/>
+          <DisplayComponent whatWasSaid={this.state.whatWasSaid} />
         </div>
       </div>
     );
@@ -87,7 +88,7 @@ class ChildComponent extends Component {
 class DisplayComponent extends Component {
   render() {
     return (
-      <div>{this.props.sayWhat}</div>
+      <div>{this.props.whatWasSaid}</div>
     );
   }
 }

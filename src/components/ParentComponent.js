@@ -13,6 +13,7 @@ class ParentComponent extends Component {
     this.state = {
       whatToSay: "",
       whatWasSaid: "",
+
     }
   }
   handleInput(e) {
@@ -36,7 +37,7 @@ class ParentComponent extends Component {
     return (
       <div>
         <div>
-          <input onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!" />
+          <input onChange={this.handleInput} value={this.state.whatToSay} type="text" placeholder="Say It, Don't Spray It!" />
         </div>
         <div>
           <ChildComponent onClick={this.handleSubmit}/>
